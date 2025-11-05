@@ -56,10 +56,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **CharacterPrompt.kt**: Contains comprehensive system prompt for the cute high school girl character personality
 
 ### Discord Bot (`kr.najoan.discord`)
-- **BotMain.kt**: Entry point for the bot, initializes JDA and Gemini client
+- **BotMain.kt**: Entry point for the bot
+  - Initializes JDA and Gemini client
+  - Sets bot activity to "선배를 기다리는 중... 💕" (watching status)
+  - Sets bot status to ONLINE
 - **MessageHandler.kt**: Handles both:
   1. Prefix-based messages (starting with "아이짱")
-  2. Slash commands (`/아이짱`)
+  2. Slash commands (`/아이짱` and `/reset`)
 - **CommandRegistrar.kt**: Auto-registers slash commands when bot starts
 
 ## Key Implementation Details

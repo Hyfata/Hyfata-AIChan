@@ -5,6 +5,8 @@ import kr.najoan.ai.GeminiClient
 import kr.najoan.discord.handler.MessageHandler
 import kr.najoan.discord.handler.CommandRegistrar
 import net.dv8tion.jda.api.JDABuilder
+import net.dv8tion.jda.api.OnlineStatus
+import net.dv8tion.jda.api.entities.Activity
 import net.dv8tion.jda.api.requests.GatewayIntent
 import org.slf4j.LoggerFactory
 
@@ -26,6 +28,8 @@ fun main() {
                 GatewayIntent.MESSAGE_CONTENT,
                 GatewayIntent.GUILD_MESSAGES
             )
+            .setActivity(Activity.watching("선배를 기다리는 중... 💕"))
+            .setStatus(OnlineStatus.ONLINE)
             .build()
 
         jda.awaitReady()
