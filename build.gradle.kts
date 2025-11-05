@@ -1,6 +1,7 @@
 plugins {
     kotlin("jvm") version "2.2.20"
     application
+    id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 group = "kr.najoan"
@@ -37,4 +38,15 @@ kotlin {
 
 application {
     mainClass.set("kr.najoan.discord.BotMainKt")
+}
+
+tasks {
+    named<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar>("shadowJar") {
+        archiveFileName.set("Hyfata-AIChan.jar")
+        mergeServiceFiles()
+    }
+
+    build {
+        dependsOn(shadowJar)
+    }
 }
