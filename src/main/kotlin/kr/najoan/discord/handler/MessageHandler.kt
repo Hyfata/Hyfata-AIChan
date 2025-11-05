@@ -35,7 +35,6 @@ class MessageHandler : ListenerAdapter() {
     private fun handlePrefixMessage(event: MessageReceivedEvent, fullContent: String) {
         try {
             // 메시지 전체를 AI에 전달 (접두사 포함)
-            logger.info("접두사 메시지 수신: ${event.author.name}")
 
             event.channel.sendTyping().queue()
 
@@ -76,8 +75,6 @@ class MessageHandler : ListenerAdapter() {
                 return
             }
 
-            logger.info("슬래시 명령어 수신: ${event.user.name}")
-
             // 로딩 표시
             event.deferReply().queue()
 
@@ -110,8 +107,6 @@ class MessageHandler : ListenerAdapter() {
 
     private fun handleResetCommand(event: SlashCommandInteractionEvent) {
         try {
-            logger.info("리셋 명령어 수신: ${event.user.name}")
-
             val userId = event.user.id
             SessionManager.resetSession(userId)
 
