@@ -143,7 +143,7 @@ src/main/kotlin/kr/najoan/
 - **언어**: Kotlin
 - **빌드**: Gradle
 - **Discord 라이브러리**: JDA 5.0.0-beta.24
-- **AI API**: Google Gemini API (gemini-1.5-flash)
+- **AI API**: Google Gemini API (gemini-2.5-flash)
 - **HTTP 클라이언트**: OkHttp3
 - **로깅**: SLF4J
 - **JSON 처리**: Gson
